@@ -8,7 +8,6 @@ const Hooks = () => {
         console.log(age);
     }
 
-    useEffect(() => console.log("Testando"));
 
     return (
         <div>

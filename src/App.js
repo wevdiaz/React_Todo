@@ -4,6 +4,7 @@ import FirstComponent from './components/FirstComponent';
 import AnotherComponent from './components/AnotherComponent';
 import Images from './components/Images';
 import Hooks from './components/Hooks';
+import List from './components/List';
 
 function App() {
   return (
@@ -16,6 +17,8 @@ function App() {
      <Images />
 
      <Hooks />
+
+     <List />
 
     </div>
   );
