@@ -13,7 +13,9 @@ function App() {
 
   const handleSumit = (e) => {
     e.preventDefault();
+    console.log(title);
     console.log("Tarefa enviada!");
+    setTitle("");
   }
 
   return (
@@ -26,6 +28,19 @@ function App() {
       <div className='form-todo'>
         <h2>Insira a sua próxima tarefa:</h2>
         <form onSubmit={handleSumit}>
+
+          <div className='form-control'>
+              <label htmlFor='title'>O que você vai fazer?</label>
+              <input 
+                  type="text" 
+                  name="title" 
+                  placeholder='Título da Tarefa'
+                  onChange={ (e) => setTitle(e.target.value) } 
+                  value = {title || ""}
+                  required
+              />
+          </div>
+
           <input type={"submit"} value="Enviar"/>
         </form>
       </div>
