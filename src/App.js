@@ -11,7 +11,7 @@ function App() {
   const [todos, setTodos] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const handleSumit = (e) => {
+  const handleSumit = async (e) => {
     e.preventDefault();
     
     const todo = {
@@ -21,7 +21,13 @@ function App() {
       done: false
     };
 
-    console.log(todo);
+    await fetch(API + "/todos", {
+      method: "POST",
+      body: JSON.stringify(todo),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
 
     setTitle("");
     setTime("");
