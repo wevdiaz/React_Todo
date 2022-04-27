@@ -48,8 +48,14 @@ function App() {
       },
     });
 
+    setTodos((prevState) => [...prevState, todo]);
+
     setTitle("");
     setTime("");
+  }
+
+  if (loading) {
+    return <p>Carregando...</p>;
   }
 
   return (
@@ -102,7 +108,7 @@ function App() {
             </div>
           );
         })}
-        
+
       </div>
 
     </div>
