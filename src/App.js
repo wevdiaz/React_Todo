@@ -62,6 +62,22 @@ function App() {
     setTodos((prevState) => prevState.filter((todo) => todo.id !== id));
   }
 
+  const handleEdit = async (todo) => {
+    todo.done = !todo.done;
+
+    const data = await fetch(API + "/todos/" + todo.id, {
+      method: "PUT",
+      body: JSON.stringify(todo),
+      headers: {
+        "Content-Type": "application/json",
+      }
+    });
+
+    setTodos((prevState) =>{
+     return prevState.map((todo) => (todo.id === data.id ? (todo = data) : todo))
+    });
+  }
+
   if (loading) {
     return <p>Carregando...</p>;
   }
@@ -116,7 +132,7 @@ function App() {
               <p>Duração: {todo.time}</p>
 
               <div className='actions'>
-                <span>
+                <span onClick={() => handleEdit(todo)}>
                   { !todo.done ? <BsBookmarkCheck /> : <BsBookmarkCheckFill /> }
                 </span>
                 <BsTrash onClick={() => handleDelete(todo.id)} />
