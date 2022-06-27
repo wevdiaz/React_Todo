@@ -1,22 +1,16 @@
 {
   "todos": [
     {
-      "id": 0.1261581843651809,
-      "title": "Cinema Batman",
-      "time": "3",
-      "done": false
-    },
-    {
-      "id": 0.8611362300096892,
-      "title": "Estudar React",
-      "time": "2",
-      "done": false
-    },
-    {
-      "id": 0.9456266466613694,
-      "title": "Montar Wireframe Website",
+      "id": 0.5005823746494948,
+      "title": "Estuddar HTML e CSS",
       "time": "4",
-      "done": false
+      "done": true
+    },
+    {
+      "id": 0.22603817221645728,
+      "title": "Ler um livro sobre Código Limpo",
+      "time": "1",
+      "done": true
     }
   ]
 }
